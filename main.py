@@ -2,7 +2,6 @@ import telebot
 import random
 import os
 
-#1828269322
 bot = telebot.TeleBot(os.getenv('BOT_TOKEN'))
 
 keyboard = telebot.types.ReplyKeyboardMarkup(resize_keyboard=True)
@@ -62,3 +61,4 @@ def Support_write(message):
     bot.register_next_step_handler(msg, input_promocod)
 
 bot.polling(none_stop=True)
+
