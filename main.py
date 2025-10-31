@@ -1,8 +1,9 @@
 import telebot
 import random
+import os
 
 #1828269322
-bot = telebot.TeleBot("7972631102:AAEClRjTSYfKWlO0v-FXkh5g_lYpG9kWYJQ")
+bot = telebot.TeleBot(os.getenv('BOT_TOKEN'))
 
 keyboard = telebot.types.ReplyKeyboardMarkup(resize_keyboard=True)
 button_MoreVideosDownload = telebot.types.KeyboardButton(text="🎬 Скачать: MoreVideosDownload ▶️")
@@ -48,10 +49,9 @@ def input_promocod(message):
 @bot.message_handler(func=lambda message: message.text == "🎬 Скачать: MoreVideosDownload ▶️")
 def MoreVideosDownload_download(message):
     keyboard_inline = telebot.types.InlineKeyboardMarkup()
-    button_zip = telebot.types.InlineKeyboardButton(text="Скачать в zip:", url="https://drive.google.com/file/d/1WPvWKSmmNy-TRcmePahBH6tlLLA2Z497/view")
-    button_rar = telebot.types.InlineKeyboardButton(text="Скачать в rar:", url="https://drive.google.com/file/d/1WP0zfAd_kbZJAP5WIbNPQx0iINKPK4sx/view")
-    keyboard_inline.add(button_zip, button_rar)
-    bot.send_message(message.chat.id, text='Скачать программу "MoreVideosDownload" в разных форматах:', reply_markup=keyboard_inline)
+    button_exe = telebot.types.InlineKeyboardButton(text="Скачать exe:", url="https://drive.google.com/file/d/1zz4zTA3LiFix6kt4KuGt1J0pvQlv8ziz/view?usp=sharing")
+    keyboard_inline.add(button_exe)
+    bot.send_message(message.chat.id, text='Скачать программу "MoreVideosDownload" (MVD):', reply_markup=keyboard_inline)
 
 @bot.message_handler(func=lambda message: message.text == "💻 Написать в поддержку: 💬")
 def Support_write(message):
