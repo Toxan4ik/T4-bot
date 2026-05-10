@@ -48,7 +48,7 @@ def input_promocod(message):
 @bot.message_handler(func=lambda message: message.text == "🎬 Скачать: MoreVideosDownload ▶️")
 def MoreVideosDownload_download(message):
     keyboard_inline = telebot.types.InlineKeyboardMarkup()
-    button_exe = telebot.types.InlineKeyboardButton(text="Скачать exe:", url="https://drive.google.com/file/d/1zz4zTA3LiFix6kt4KuGt1J0pvQlv8ziz/view?usp=sharing")
+    button_exe = telebot.types.InlineKeyboardButton(text="Скачать exe:", url="https://drive.google.com/file/d/1q1XwXInjYoD88jYeB6ITKX2OfSpX3q_i/view?usp=sharing")
     keyboard_inline.add(button_exe)
     bot.send_message(message.chat.id, text='Скачать программу "MoreVideosDownload" (MVD):', reply_markup=keyboard_inline)
 
